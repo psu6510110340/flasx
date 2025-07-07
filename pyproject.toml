@@ -13,10 +13,15 @@ dependencies = [
     "fastapi-cli (>=0.0.7,<0.0.8)",
     "sqlalchemy (>=2.0.41,<3.0.0)",
     "sqlmodel (>=0.0.24,<0.0.25)",
-    "aiosqlite (>=0.21.0,<0.22.0)"
+    "aiosqlite (>=0.21.0,<0.22.0)",
 ]
 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+httpx = "^0.28.1"
+
