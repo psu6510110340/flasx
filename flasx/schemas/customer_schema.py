@@ -1,12 +1,12 @@
 from typing import Optional
 from datetime import datetime
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 
 
 class CustomerBase(BaseModel):
     name: str
-    email: EmailStr
-    phone: Optional[str] = None
+    email: EmailStr | None = None
+    phone: str
     address: Optional[str] = None
     is_active: bool = True
 
@@ -28,5 +28,4 @@ class Customer(CustomerBase):
     created_at: datetime
     updated_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
